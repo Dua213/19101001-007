@@ -1,8 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using task4.Models;
+using System.Linq;
+using System.Threading.Tasks;
+using task3.Models;
 
-namespace task4.Controllers
+namespace task3.Controllers
 {
     public class HomeController : Controller
     {
@@ -15,6 +20,17 @@ namespace task4.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Message = "Message is Recieved"
+            return View();
+        }
+        public IActionResult task(string fname, string lanme, string email, char pno)
+        {
+
+            return View(Index);
+        }
+
+        public IActionResult Privacy()
+        {
             return View();
         }
 
@@ -24,4 +40,3 @@ namespace task4.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
-}
